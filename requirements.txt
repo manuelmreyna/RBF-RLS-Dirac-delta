@@ -1,0 +1,26 @@
+# Python >= 3.11 is required (the RBF notebooks use star-subscript syntax,
+# e.g. `u_fields[*best_idx, -1]`, which is a SyntaxError on Python 3.10).
+#
+# PyTorch is only needed for the two PINN notebooks. Developed with
+# torch 2.5.1 + CUDA 12.1. For a GPU build, install torch FIRST following
+# https://pytorch.org/get-started/locally/ , e.g.
+#   pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+# then run `pip install -r requirements.txt` (the torch line is then a no-op).
+# A CPU-only install works but the PINN runs will be much slower.
+
+# --- Numerical core ---
+numpy>=2.0          # np.trapezoid (added in NumPy 2.0) is used in the RBF notebook
+scipy>=1.11         # scipy.stats.qmc (Latin hypercube), scipy.special, scipy.optimize
+sympy>=1.12         # symbolic derivation / lambdify of the RBF residual operators
+
+# --- Machine learning (PINN notebooks) ---
+torch==2.5.1
+torchinfo>=1.8
+
+# --- Hyperparameter optimisation (Gaussian-process Bayesian optimisation) ---
+scikit-optimize>=0.10   # imported as `skopt`
+
+# --- Plotting and notebooks ---
+matplotlib>=3.7
+jupyterlab>=4.0
+ipykernel>=6.25
