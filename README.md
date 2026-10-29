@@ -26,6 +26,11 @@ inverse (parameter-estimation) settings. Four test problems are covered.
 | `PINN_problem_4.ipynb` | PINN for Problem 4, with Bayesian optimisation of the architecture and loss weights |
 | `invlap.py` | Numerical inverse Laplace transform (de Hoog algorithm), used to compute reference solutions. Third-party code, see [Acknowledgements](#third-party-code-and-data) |
 | `homo1.txt` | Measured breakthrough curve measured by Levy and Berkowitz (2003) used in Problem 2 (columns: `time`, `Measured`, `CTRW`, `ADE`) |
+
+## Generated contents
+
+| File | Description |
+|------|-------------|
 | `PINN_problem_2_est_params.npy` | Parameters `[v, D]` estimated by the PINN inverse run (Problem 2) |
 | `PINN_problem_2_fwd_output.npy`, `PINN_problem_2_inv_output.npy` | PINN solution fields on the 201 × 201 (t, x) evaluation grid (forward and inverse runs) |
 | `PINN_problem_2_model.pt`, `PINN_problem_2_model_inverse.pt` | Trained forward and inverse PINN checkpoint (model, optimizer, scheduler state and loss history) |
